@@ -2,7 +2,7 @@
 changing kafka
 
 # setup kafka in your local machine
-Run kafka in docker:
+Run `Kafka` and `Zookeeper` in the same docker container:
 ```bash
 docker run --rm --env ADVERTISED_HOST=kafka --env ADVERTISED_PORT=9092 -p 2181:2181 -p 9092:9092 --name kafka -h kafka spotify/kafka
 ```
@@ -19,6 +19,13 @@ docker run --rm -it --name kafka-producer --link kafka spotify/kafka /bin/sh -c 
 ```
 
 # running the samza Job
+
+DNS names `kafka` and `zookeeper` must resolve to the IPs where the your container is bound. One option is to set them in `/etc/hosts`:
+
+```
+127.0.0.1	zookeeper kafka
+```
+
 
 ```bash
 echo "Preparing the samza Task..."
