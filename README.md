@@ -21,11 +21,19 @@ docker run --rm -it --name kafka-producer --link kafka spotify/kafka /bin/sh -c 
 # running the samza Job
 
 ```bash
-cd /Users/javierarias/mywork/hello-samza/deploy
+echo "Preparing the samza Task..."
+rm -rf target
+mvn clean package
+mkdir -p target/deploy/
+tar -xvf target/simple-samza-job-1.0-SNAPSHOT-dist.tar.gz -C target/deploy/
+```
 
-samza/bin/run-job.sh \
---config-factory=org.apache.samza.config.factories.PropertiesConfigFactory \
-  --config-path=file:///Users/javierarias/mywork/hello-samza/src/main/config/wikipedia-feed.properties
+
+
+```bash
+./target/deploy/bin/run-job.sh \
+  --config-factory=org.apache.samza.config.factories.PropertiesConfigFactory \
+  --config-path $PWD/config/local.simple-samza-job.properties
 ```
 
 # References
