@@ -68,16 +68,6 @@
       <version>${samza.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.kafka</groupId>
-      <artifactId>kafka_2.11</artifactId>
-      <version>0.10.1.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.schwering</groupId>
-      <artifactId>irclib</artifactId>
-      <version>1.10</version>
-    </dependency>
-    <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.6.2</version>
@@ -195,32 +185,6 @@
   <build>
     <pluginManagement>
       <plugins>
-        <!--<plugin>-->
-        <!--<groupId>org.apache.rat</groupId>-->
-        <!--<artifactId>apache-rat-plugin</artifactId>-->
-        <!--<version>0.9</version>-->
-        <!--<configuration>-->
-        <!--<excludes>-->
-        <!--<exclude>*.patch</exclude>-->
-        <!--<exclude>**/target/**</exclude>-->
-        <!--<exclude>*.json</exclude>-->
-        <!--<exclude>.vagrant/**</exclude>-->
-        <!--<exclude>.git/**</exclude>-->
-        <!--<exclude>*.md</exclude>-->
-        <!--<exclude>docs/**</exclude>-->
-        <!--<exclude>config/**</exclude>-->
-        <!--<exclude>bin/**</exclude>-->
-        <!--<exclude>.gitignore</exclude>-->
-        <!--<exclude>**/.cache/**</exclude>-->
-        <!--<exclude>deploy/**</exclude>-->
-        <!--<exclude>**/.project</exclude>-->
-        <!--<exclude>**/.gradle/**</exclude>-->
-        <!--<exclude>**/gradle/**</exclude>-->
-        <!--<exclude>**/gradlew*</exclude>-->
-        <!--<exclude>**/build/**</exclude>-->
-        <!--</excludes>-->
-        <!--</configuration>-->
-        <!--</plugin>-->
       </plugins>
     </pluginManagement>
     <plugins>
@@ -233,20 +197,6 @@
           <target>1.8</target>
         </configuration>
       </plugin>
-      <!--<plugin>-->
-      <!--<groupId>org.apache.rat</groupId>-->
-      <!--<artifactId>apache-rat-plugin</artifactId>-->
-      <!--<version>0.9</version>-->
-      <!--<executions>-->
-      <!--<execution>-->
-      <!--<phase>test</phase>-->
-      <!--<goals>-->
-      <!--<goal>check</goal>-->
-      <!--</goals>-->
-      <!--</execution>-->
-      <!--</executions>-->
-      <!--</plugin>-->
-      <!-- plugin to build the tar.gz file filled with examples -->
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>2.3</version>
