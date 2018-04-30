@@ -1,5 +1,9 @@
-# metamorphosis
-changing kafka
+# samzastic
+A playground for `Samza` integration tests.
+
+<img src="docs/IMG_20180426_162312.jpg" alt="SAMZASTIC end2end testing" style="width: 640px;"/>
+
+For a simple intro, please see [docs](docs/README.md)
 
 # setup kafka in your local machine
 Run `Kafka` and `Zookeeper` in the same docker container:
