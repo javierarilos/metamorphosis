@@ -30,7 +30,8 @@ public class PhraseSplitterTaskTest {
 
     @Test
     public void givenAllIsRunning_whenGraceHopperPhraseInPhraseTopic_thenForgivenessInWordsTopic()
-        throws ExecutionException, InterruptedException {
+        throws ExecutionException, InterruptedException
+    {
         // given everything is running
         // TODO: AUTOMATE START OF KAFKA AND SAMZA, CLEANOUT OF TOPICS
 
@@ -44,8 +45,8 @@ public class PhraseSplitterTaskTest {
         // then
         thenBroker("kafka:9092")
             .topic("words-topic")
-            .receivesMessages(12)
             .inLessThan(Duration.ofSeconds(10))
+            .receivesMessages(12)
             .andMessages(containForgiveness);
     }
 
@@ -57,7 +58,7 @@ public class PhraseSplitterTaskTest {
         // when phrase in phrases-topic
 
         String graceHopperPhrase = "It is easier to ask forgiveness than it is to get permission";
-        String anonymousPhrase = "Arguing with an engineer is like fighting a pig in mud after the first few hours you realise they enjoy it";
+
         whenBroker("kafka:9092")
             .topic("phrases-topic")
             .containsMessage(graceHopperPhrase);
